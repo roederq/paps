@@ -1,0 +1,942 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://bornofhieroglyphs.github.io/projeto_aps/trabalho_final_aps.html/trabalho_final_aps.html">
+      
+      
+      
+        <link rel="next" href="diagrama_uml.html">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.47">
+    
+    
+      
+        <title>Descrição - Sistema de Recomendação de Jogos</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="assets/custom.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sistema-de-recomendacao-de-jogos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Sistema de Recomendação de Jogos" class="md-header__button md-logo" aria-label="Sistema de Recomendação de Jogos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistema de Recomendação de Jogos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Descrição
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Sistema de Recomendação de Jogos" class="md-nav__button md-logo" aria-label="Sistema de Recomendação de Jogos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistema de Recomendação de Jogos
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Descrição
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="trabalho_final_aps.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Descrição
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ceub-aps-3-semestre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ceub ~ APS 3° Semestre
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alunos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alunos:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-e-contexto-do-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral e Contexto do Sistema
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visão Geral e Contexto do Sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contexto-de-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexto de Aplicação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-planejamento-e-definicao-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Planejamento e Definição de Requisitos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Planejamento e Definição de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-requisitos-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Requisitos Funcionais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-requisitos-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Requisitos Não Funcionais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cenario-de-caso-de-uso-tabela" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Cenário de Caso de Uso (Tabela)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-diagramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Diagramas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Diagramas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#52-diagrama-de-sequencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Diagrama de Sequência
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-diagrama-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Diagrama de Classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-diagrama-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Diagrama de Objetos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-diagrama-de-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Diagrama de Pacotes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Diagramas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Diagramas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="diagrama_uml.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UML
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ceub-aps-3-semestre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ceub ~ APS 3° Semestre
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alunos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alunos:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visao-geral-e-contexto-do-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visão Geral e Contexto do Sistema
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visão Geral e Contexto do Sistema">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contexto-de-aplicacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexto de Aplicação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-planejamento-e-definicao-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Planejamento e Definição de Requisitos
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Planejamento e Definição de Requisitos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-requisitos-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Requisitos Funcionais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-requisitos-nao-funcionais" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Requisitos Não Funcionais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cenario-de-caso-de-uso-tabela" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Cenário de Caso de Uso (Tabela)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-diagramas" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Diagramas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Diagramas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#52-diagrama-de-sequencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Diagrama de Sequência
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-diagrama-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Diagrama de Classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-diagrama-de-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Diagrama de Objetos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55-diagrama-de-pacotes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Diagrama de Pacotes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="sistema-de-recomendacao-de-jogos">Sistema de Recomendação de Jogos</h1>
+<h3 id="ceub-aps-3-semestre">Ceub ~ APS 3° Semestre</h3>
+<h3 id="alunos">Alunos:</h3>
+<ul>
+<li>Luiz Paulo Raeder</li>
+<li>Eduardo Rodrigues</li>
+<li>Douglas Amorim</li>
+</ul>
+<hr />
+<h2 id="visao-geral-e-contexto-do-sistema">Visão Geral e Contexto do Sistema</h2>
+<p>O sistema é uma plataforma que ajuda os usuários, por meio de uma api de IA, a descobrir jogos com base nos seus gostos, histórico de navegação, histórico de recomendação e preferências individuais.</p>
+<blockquote>
+<p>O sistema contará com cinco módulos principais:</p>
+<ul>
+<li><strong>Interface do Usuário</strong>: Módulo para navegação, onde o usuário poderá interagir com a plataforma e explorar as recomendações.</li>
+<li><strong>Módulo de Avaliações</strong>: Processará dados das avaliações dos usuários para armazenar no banco de dados e fornecê-los aos outros usuários.</li>
+<li><strong>Módulo de Recomendações</strong>: Utilizando uma API de inteligência artificial, processará dados do histórico e das preferências do usuário para gerar recomendações personalizadas.</li>
+<li><strong>API IA</strong>: Irá se basear em dados fornecidos pelos outros módulos como histórico, avaliações, recomendações e amizades para que uma recomendação de jogo seja gerada por meio de uma IA.</li>
+<li><strong>Banco de Dados</strong>: Armazenará informações dos jogos e dos perfis dos usuários, facilitando o processamento de recomendações e o histórico.</li>
+</ul>
+</blockquote>
+<h3 id="contexto-de-aplicacao">Contexto de Aplicação</h3>
+<p>O sistema será desenvolvido para atender a um público diverso, desde jogadores casuais os mais experientes que buscam recomendações confiáveis para seu tempo de lazer. A ferramenta também poderá ser útil para empresas desenvolvedoras de jogos, fornecendo insights sobre tendências e preferências do público.</p>
+<p>Em resumo, o sistema de recomendações de jogos representa uma solução moderna que conecta jogadores e contribui para um mercado de entretenimento mais acessível e adaptado às necessidades dos usuários.</p>
+<hr />
+<h2 id="1-planejamento-e-definicao-de-requisitos">1. Planejamento e Definição de Requisitos</h2>
+<h3 id="objetivo">Objetivo</h3>
+<p>Mapear as funcionalidades principais do sistema e definir os requisitos técnicos e funcionais de cada módulo, considerando os recursos disponíveis e o alinhamento com as necessidades do projeto.</p>
+<hr />
+<h3 id="11-requisitos-funcionais">1.1 Requisitos Funcionais</h3>
+<p>Os requisitos funcionais definem o comportamento esperado do sistema, detalhando as ações que ele deve realizar para atender às necessidades dos usuários:</p>
+<ol>
+<li>
+<p><strong>Cadastro e Login de Usuários</strong>  </p>
+</li>
+<li>
+<p><strong>Sistema de Pesquisa de Jogos</strong>  </p>
+<ul>
+<li>Possibilitar a busca de jogos por título, categoria ou desenvolvedor.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sistema de Recomendação</strong>  </p>
+<ul>
+<li>Gerar recomendações personalizadas com base no histórico de navegação e preferências dos usuários utilizando IA.</li>
+</ul>
+</li>
+<li>
+<p><strong>Interação com Jogos</strong>  </p>
+<ul>
+<li>Permitir que os usuários avaliem, favoritem e adicionem jogos à lista de desejos.</li>
+</ul>
+</li>
+<li>
+<p><strong>Sistema de Amizades</strong>  </p>
+<ul>
+<li>Oferecer a funcionalidade de adicionar amigos e visualizar as recomendações deles.</li>
+</ul>
+</li>
+<li>
+<p><strong>Histórico de Recomendações</strong>  </p>
+<ul>
+<li>Armazenar e exibir as recomendações anteriores para consulta futura.</li>
+</ul>
+</li>
+<li>
+<p><strong>Feedback do Usuário</strong>  </p>
+<ul>
+<li>Coletar avaliações e sugestões para melhorar as recomendações.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="12-requisitos-nao-funcionais">1.2 Requisitos Não Funcionais</h3>
+<p>Os requisitos não funcionais definem as restrições e características de qualidade que o sistema deve atender:</p>
+<ol>
+<li>
+<p><strong>Desempenho</strong>  </p>
+<ul>
+<li>O sistema deve ser capaz de gerar recomendações em no máximo 2 segundos para consultas padrão.</li>
+</ul>
+</li>
+<li>
+<p><strong>Usabilidade</strong>  </p>
+<ul>
+<li>A interface deve ser intuitiva e compatível com dispositivos móveis.</li>
+</ul>
+</li>
+<li>
+<p><strong>Segurança</strong>  </p>
+<ul>
+<li>Garantir a criptografia de dados sensíveis, como senhas e informações pessoais.</li>
+<li>Implementar controle de acesso para garantir que cada usuário veja apenas seus próprios dados e recomendações.</li>
+</ul>
+</li>
+<li>
+<p><strong>Escalabilidade</strong>  </p>
+<ul>
+<li>O sistema deve ser projetado para suportar o crescimento da base de usuários e o aumento no número de jogos armazenados.</li>
+</ul>
+</li>
+<li>
+<p><strong>Portabilidade</strong>  </p>
+<ul>
+<li>O sistema deve ser compatível com navegadores comuns (Chrome, Firefox, Safari) e ser responsivo em dispositivos móveis.</li>
+</ul>
+</li>
+<li>
+<p><strong>Manutenibilidade</strong>  </p>
+<ul>
+<li>O código deve ser modular e documentado para facilitar futuras atualizações e correções.</li>
+</ul>
+</li>
+<li>
+<p><strong>Confiabilidade</strong>  </p>
+<ul>
+<li>O sistema deve apresentar um bom uptime mensal, com monitoramento para identificar falhas rapidamente.</li>
+</ul>
+</li>
+<li>
+<p><strong>Integração</strong>  </p>
+<ul>
+<li>Deve ser possível integrar o sistema com APIs IA de terceiros para que seja realizado o cálculo de recomendação.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h3 id="13-cenario-de-caso-de-uso-tabela">1.3 Cenário de Caso de Uso (Tabela)</h3>
+<table>
+<thead>
+<tr>
+<th>Caso de Uso</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fazer Login</strong></td>
+<td>Usuário faz login na plataforma com verificação em duas etapas.</td>
+</tr>
+<tr>
+<td><strong>Pesquisar Jogos</strong></td>
+<td>Permite ao usuário buscar jogos por título, categoria ou desenvolvedor.</td>
+</tr>
+<tr>
+<td><strong>Adicionar à Lista de Desejos</strong></td>
+<td>Usuário adiciona jogos a uma lista pessoal para acompanhar títulos de interesse.</td>
+</tr>
+<tr>
+<td><strong>Avaliar/Favoritar Jogos</strong></td>
+<td>Usuário pode avaliar ou favoritar jogos para personalizar recomendações futuras.</td>
+</tr>
+<tr>
+<td><strong>Recomendações Personalizadas</strong></td>
+<td>Geração de recomendações baseadas no histórico e nas interações do usuário.</td>
+</tr>
+<tr>
+<td><strong>Adicionar Amigo</strong></td>
+<td>Usuário pode adicionar amigos à sua lista, permitindo interações sociais no sistema.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-diagramas">5. Diagramas</h2>
+<h3 id="52-diagrama-de-sequencia">5.2 Diagrama de Sequência</h3>
+<p>O diagrama de sequência ilustra a interação entre os objetos do sistema ao longo do tempo para realizar funções específicas.</p>
+<p><strong>Exemplo de Caso: Obter Recomendações de Jogos</strong></p>
+<ol>
+<li>O usuário solicita recomendações por meio da interface.</li>
+<li>A interface envia a solicitação para o módulo de autenticação, verificando a identidade do usuário.</li>
+<li>O módulo de autenticação valida o token JWT e direciona a solicitação ao módulo de recomendações.</li>
+<li>O módulo de recomendações consulta o banco de dados para obter o histórico do usuário.</li>
+<li>Após consultar a API de IA, o sistema retorna uma lista personalizada de jogos.</li>
+<li>A interface exibe as recomendações ao usuário.</li>
+</ol>
+<hr />
+<h3 id="53-diagrama-de-classes">5.3 Diagrama de Classes</h3>
+<p>O diagrama de classes representa as classes do sistema, suas propriedades, métodos e relacionamentos.</p>
+<p><strong>Estrutura Inicial:</strong></p>
+<ul>
+<li><strong>Classe Usuario</strong><ul>
+<li>Atributos: <code>id</code>, <code>nome</code>, <code>email</code>, <code>senha</code>, <code>historico</code></li>
+<li>Métodos: <code>autenticar()</code>, <code>adicionarAmigo()</code>, <code>avaliarJogo()</code></li>
+</ul>
+</li>
+<li><strong>Classe Jogo</strong><ul>
+<li>Atributos: <code>id</code>, <code>titulo</code>, <code>categoria</code>, <code>desenvolvedor</code></li>
+<li>Métodos: <code>obterDetalhes()</code>, <code>adicionarFavorito()</code></li>
+</ul>
+</li>
+<li><strong>Classe Recomendacao</strong><ul>
+<li>Atributos: <code>id</code>, <code>id_usuario</code>, <code>id_jogo</code>, <code>data_recomendacao</code></li>
+<li>Métodos: <code>gerarRecomendacoes()</code></li>
+</ul>
+</li>
+<li><strong>Classe BancoDeDados</strong><ul>
+<li>Atributos: <code>conexao</code></li>
+<li>Métodos: <code>consultar()</code>, <code>salvar()</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="54-diagrama-de-objetos">5.4 Diagrama de Objetos</h3>
+<p>O diagrama de objetos exemplifica instâncias específicas das classes em um cenário particular.</p>
+<p><strong>Exemplo:</strong></p>
+<ul>
+<li><strong>Usuário Luiz</strong>:<ul>
+<li>Nome: Luiz Paulo</li>
+<li>Jogos Favoritos: <code>Dark Souls</code>, <code>Hades</code></li>
+<li>Histórico de Recomendação: <code>Elden Ring</code>, <code>Hollow Knight</code></li>
+</ul>
+</li>
+<li><strong>Jogo Dark Souls</strong>:<ul>
+<li>Categoria: Ação/RPG</li>
+<li>Desenvolvedor: FromSoftware</li>
+</ul>
+</li>
+<li><strong>Recomendação Luiz → Elden Ring</strong>:<ul>
+<li>Data: 02/12/2024</li>
+<li>Base: Favorito <code>Dark Souls</code></li>
+</ul>
+</li>
+</ul>
+<hr />
+<h3 id="55-diagrama-de-pacotes">5.5 Diagrama de Pacotes</h3>
+<p>O diagrama de pacotes organiza os módulos do sistema, mostrando as dependências entre eles.</p>
+<p><strong>Estrutura de Pacotes:</strong></p>
+<ul>
+<li><strong>Pacote Principal: Sistema</strong></li>
+<li>Subpacotes:<ul>
+<li><strong>Interface</strong>: Contém a camada de apresentação para o usuário.</li>
+<li><strong>Autenticacao</strong>: Gerencia o login, tokens e permissões.</li>
+<li><strong>Recomendacao</strong>: Integra a IA e processa dados do usuário.</li>
+<li><strong>BancoDeDados</strong>: Implementa operações CRUD para armazenar e recuperar dados.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Dependências:</strong>
+- A <strong>Interface</strong> depende da <strong>Autenticacao</strong> e da <strong>Recomendacao</strong>.
+- A <strong>Recomendacao</strong> depende do <strong>BancoDeDados</strong>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
